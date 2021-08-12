@@ -2,6 +2,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #002156;
+  background-color: var(--nav);
   height: 100%;
 }
