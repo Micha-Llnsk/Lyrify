@@ -1,4 +1,7 @@
-.footer {
+.navigation {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #002156;
+  height: 100%;
 }
