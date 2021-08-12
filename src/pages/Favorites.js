@@ -1,7 +1,6 @@
 export default function Favorites() {
   return (
     <div>
-      <h2>Favorites</h2>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi
         voluptatum numquam minus molestias repudiandae! Laboriosam ut quia,

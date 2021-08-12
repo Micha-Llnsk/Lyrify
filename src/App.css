@@ -14,3 +14,7 @@
   background-color: var(--body);
   color: var(--text);
 }
+
+.header {
+  background-color: var(--nav);
+}

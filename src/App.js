@@ -10,7 +10,22 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <div className="header"></div>
+        <header className="App__header">
+          <Switch>
+            <Route path="/playlists">
+              <h2 className="header">Playlists</h2>
+            </Route>
+            <Route path="/search">
+              <h2 className="header">Search</h2>
+            </Route>
+            <Route path="/artists">
+              <h2 className="header">Artists</h2>
+            </Route>
+            <Route path="/favorites">
+              <h2 className="header">Favorites</h2>
+            </Route>
+          </Switch>
+        </header>
         <main className="content">
           <Switch>
             <Route path="/favorites">
