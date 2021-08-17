@@ -5,6 +5,7 @@ import Artists from "./pages/Artists.js";
 import Search from "./pages/Search.js";
 import Playlists from "./pages/Playlists.js";
 import Footer from "./components/Footer.js";
+import Login from "./pages/Login.js";
 
 function App() {
   return (
@@ -24,6 +25,12 @@ function App() {
             <Route path="/favorites">
               <h2 className="header">Favorites</h2>
             </Route>
+            <Route exact path="/">
+              <h2 className="header">Playlists</h2>
+            </Route>
+            <Route path="*">
+              <h2>No match</h2>
+            </Route>
           </Switch>
         </header>
         <main className="content">
@@ -41,10 +48,10 @@ function App() {
               <Playlists />
             </Route>
             <Route exact path="/">
-              <Playlists />
+              <Login />
             </Route>
             <Route path="*">
-              <h2>No match</h2>
+              <p>Wrong URL, try a different one ;)</p>
             </Route>
           </Switch>
         </main>
