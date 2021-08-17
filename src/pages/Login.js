@@ -3,7 +3,8 @@ const Redirect_url = "http://localhost:3000/playlists";
 const Client_id = "4bf03788a9974f979220033e8e0b79cf";
 
 function handleLogin() {
-  window.location.href = `${Auth_url}?client_id=${Client_id}&redirect_uri=${Redirect_url}&response_type=token&show_dialog=true`;
+  const URL = `${Auth_url}?client_id=${Client_id}&redirect_uri=${Redirect_url}&response_type=token&show_dialog=true`;
+  window.location.href = URL;
 }
 
 export default function Login() {
