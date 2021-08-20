@@ -1,12 +1,39 @@
+import { useState, useEffect } from "react";
+import useToken from "../hooks/useToken";
+
 export default function Artists() {
-  return (
-    <div>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi
-        voluptatum numquam minus molestias repudiandae! Laboriosam ut quia,
-        dicta dolorum ducimus quod quam quasi quidem tenetur, facere facilis
-        animi sed explicabo!
-      </p>
-    </div>
-  );
+  const [artists, setArtists] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [token] = useToken();
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch("https://api.spotify.com/v1/me/following", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setArtists(data.artists);
+        setIsLoading(false);
+      });
+  }, [token]);
+
+  function renderArtists() {
+    if (isLoading || artists === null) {
+      return "Loading...";
+    }
+    const ListOfArtists = artists.map((artist) => {
+      return (
+        <li key={artist.items.id}>
+          <p>{artist.items.name}</p>
+        </li>
+      );
+    });
+    return ListOfArtists;
+  }
+
+  return <ul>{renderArtists()}</ul>;
 }
