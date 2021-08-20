@@ -5,9 +5,11 @@ import Artists from "./pages/Artists.js";
 import Search from "./pages/Search.js";
 import Playlists from "./pages/Playlists.js";
 import Footer from "./components/Footer.js";
-import Login from "./pages/Login.js";
+import useToken from "./hooks/useToken.js";
+import Authorized from "./components/Authorized";
 
 function App() {
+  const [, , clearToken] = useToken();
   return (
     <Router>
       <div className="App">
@@ -39,16 +41,23 @@ function App() {
               <Favorites />
             </Route>
             <Route path="/artists">
-              <Artists />
+              <Authorized>
+                <Artists />
+              </Authorized>
             </Route>
             <Route path="/search">
               <Search />
             </Route>
             <Route path="/playlists">
-              <Playlists />
+              <Authorized>
+                <Playlists />
+              </Authorized>
             </Route>
             <Route exact path="/">
-              <Login />
+              <Authorized>
+                You are logged in
+                <button onClick={() => clearToken()}>Log Out</button>
+              </Authorized>
             </Route>
             <Route path="*">
               <p>Wrong URL, try a different one ;)</p>
