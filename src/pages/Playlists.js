@@ -30,7 +30,9 @@ export default function Playlists() {
     const ListOfPlaylists = playlists.map((playlist) => {
       return (
         <li className="List__Item" key={playlist.id}>
-          {playlist.name}
+          <img src={playlist.images[2]?.url} alt={playlist.name} />
+          <p>{playlist.name}</p>
+          <p>Songs: {playlist.tracks.total}</p>
         </li>
       );
     });
