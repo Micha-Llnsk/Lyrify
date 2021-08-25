@@ -8,6 +8,9 @@ export default function Search() {
   const [token] = useToken();
 
   useEffect(() => {
+    if (!search) {
+      return;
+    }
     setIsLoading(true);
     fetch(`https://api.spotify.com/v1/search?q=${search}&type=track%2Cartist`, {
       headers: {
