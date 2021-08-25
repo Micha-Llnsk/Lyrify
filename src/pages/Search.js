@@ -21,7 +21,6 @@ export default function Search() {
       .then((data) => {
         setSongs(data.tracks.items);
         setIsLoading(false);
-        console.log(data);
       });
   }, [search, token]);
 
