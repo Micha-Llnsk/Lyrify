@@ -4,13 +4,11 @@ import useToken from "../hooks/useToken";
 export default function Artists() {
   const [artists, setArtists] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
 
   const [token] = useToken();
 
   useEffect(() => {
     setIsLoading(true);
-    setIsError(false);
     fetch("https://api.spotify.com/v1/me/following?type=artist", {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -21,8 +19,8 @@ export default function Artists() {
         setArtists(data.artists.items);
         setIsLoading(false);
       })
-      .catch(() => {
-        setIsError(true);
+      .catch((error) => {
+        console.log(error);
       });
   }, [token]);
 
