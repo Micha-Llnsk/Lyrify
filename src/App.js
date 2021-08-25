@@ -46,7 +46,9 @@ function App() {
               </Authorized>
             </Route>
             <Route path="/search">
-              <Search />
+              <Authorized>
+                <Search />
+              </Authorized>
             </Route>
             <Route path="/playlists">
               <Authorized>

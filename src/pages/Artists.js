@@ -9,15 +9,18 @@ export default function Artists() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://api.spotify.com/v1/me/following", {
+    fetch("https://api.spotify.com/v1/me/following?type=artist", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     })
       .then((res) => res.json())
       .then((data) => {
-        setArtists(data.artists);
+        setArtists(data.artists.items);
         setIsLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }, [token]);
 
@@ -27,8 +30,8 @@ export default function Artists() {
     }
     const ListOfArtists = artists.map((artist) => {
       return (
-        <li key={artist.items.id}>
-          <p>{artist.items.name}</p>
+        <li key={artist.id}>
+          <p>{artist.name}</p>
         </li>
       );
     });
