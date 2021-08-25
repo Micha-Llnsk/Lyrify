@@ -7,6 +7,7 @@ import Playlists from "./pages/Playlists.js";
 import Footer from "./components/Footer.js";
 import useToken from "./hooks/useToken.js";
 import Authorized from "./components/Authorized";
+import SinglePlaylist from "./pages/SinglePlaylist.js";
 
 function App() {
   const [, , clearToken] = useToken();
@@ -37,6 +38,9 @@ function App() {
         </header>
         <main className="content">
           <Switch>
+            <Route path="/playlists/:playlistId">
+              <SinglePlaylist />
+            </Route>
             <Route path="/favorites">
               <Favorites />
             </Route>
