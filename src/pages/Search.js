@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import useToken from "../hooks/useToken";
+import "./Search.css";
+import { Link } from "react-router-dom";
 
 export default function Search() {
   const [search, setSearch] = useState("");
@@ -31,10 +33,16 @@ export default function Search() {
     const ListOfSongs = songs.map((song) => {
       return (
         <li key={song.id}>
-          <img src={song.album.images[2].url} alt={song.album.name} />
-          <p>Artists: {song.artists[0].name}</p>
-          <p>Song: {song.name}</p>
-          <p>Album: {song.album.name}</p>
+          <Link className="Link__search">
+            <img src={song.album.images[2].url} alt={song.album.name} />
+            <div className="Link__search--info">
+              <p className="Link__search--name">{song.name}</p>
+              <p className="Link__search--sub">
+                Artists: {song.artists[0].name}
+              </p>
+              <p className="Link__search--sub">Album: {song.album.name}</p>
+            </div>
+          </Link>
         </li>
       );
     });
@@ -48,15 +56,16 @@ export default function Search() {
 
   return (
     <div>
-      <form className="search" onChange={handleChange}>
+      <form className="Form" onChange={handleChange}>
         <input
+          className="Input"
           type="search"
           placeholder="Search Artists/Songs"
           name="search"
           id="search"
         />
       </form>
-      <ul className="Songlist">{renderSongs()}</ul>
+      <ul>{renderSongs()}</ul>
     </div>
   );
 }
