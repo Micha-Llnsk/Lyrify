@@ -31,15 +31,19 @@ export default function Playlists() {
     const ListOfPlaylists = playlists.map((playlist) => {
       return (
         <li key={playlist.id}>
-          <Link className="Link" to={`/playlists/${playlist.id}`}>
+          <Link className="Link__playlists" to={`/playlists/${playlist.id}`}>
             <img src={playlist.images[2]?.url} alt={playlist.name} />
-            <div className="Link__info">
-              <p className="Link__name">{playlist.name}</p>
-              <p className="Link__sub">Owner: {playlist.owner.display_name}</p>
-              <p className="Link__sub">Songs: {playlist.tracks.total}</p>
+            <div className="Link__playlists--info">
+              <p className="Link__playlists--name">{playlist.name}</p>
+              <p className="Link__playlists--sub">
+                Owner: {playlist.owner.display_name}
+              </p>
+              <p className="Link__playlists--sub">
+                Songs: {playlist.tracks.total}
+              </p>
             </div>
           </Link>
-          <div className="Link__border"></div>
+          <div className="Link__playlists--border"></div>
         </li>
       );
     });
