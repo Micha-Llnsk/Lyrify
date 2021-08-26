@@ -1,31 +1,28 @@
-.Link {
-  padding: 1.5rem 1rem;
+.Link__playlists {
+  padding: 1rem 1rem;
   display: flex;
   text-decoration: none;
   color: var(--text);
 }
 
-.Link:after {
-  margin: 0 auto;
-  width: 80%;
-}
-
-.Link__info {
+.Link__playlists--info {
   margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.Link__name {
+.Link__playlists--name {
   font-size: 120%;
   font-weight: bold;
   padding-bottom: 0.2rem;
 }
 
-.Link__sub {
+.Link__playlists--sub {
   font-size: 70%;
   color: var(--text-sub);
 }
 
-.Link__border {
+.Link__playlists--border {
   width: 90%;
   height: 1px;
   margin: 0px auto;
