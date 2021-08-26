@@ -1,3 +1,33 @@
-.List__Item {
-  padding: 1.25em 0.75em;
+.Link {
+  padding: 1.5rem 1rem;
+  display: flex;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.Link:after {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.Link__info {
+  margin: 0 2rem;
+}
+
+.Link__name {
+  font-size: 120%;
+  font-weight: bold;
+  padding-bottom: 0.2rem;
+}
+
+.Link__sub {
+  font-size: 70%;
+  color: var(--text-sub);
+}
+
+.Link__border {
+  width: 90%;
+  height: 1px;
+  margin: 0px auto;
+  border-bottom: 1px solid var(--active);
 }
