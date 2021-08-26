@@ -16,5 +16,13 @@
 }
 
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--nav);
+  height: 100%;
+}
+
+.content {
+  overflow-y: scroll;
 }
