@@ -1,0 +1,47 @@
+.Form {
+  display: flex;
+  justify-content: center;
+}
+
+.Input {
+  margin: 1rem 0.5rem 0.5rem 0.5rem;
+  border: none;
+  width: 75%;
+  height: 2rem;
+  background: transparent;
+  color: var(--text);
+  border-bottom: 2px solid var(--text);
+  font-family: "Righteous", sans-serif;
+  font-size: 18px;
+}
+
+.Input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--active);
+}
+
+.Link__search {
+  padding: 0.5rem 1rem;
+  display: flex;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.Link__search--info {
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.Link__search--name {
+  font-size: 120%;
+  font-weight: bold;
+  padding-bottom: 0.2rem;
+}
+
+.Link__search--sub {
+  font-size: 70%;
+  color: var(--text-sub);
+}
