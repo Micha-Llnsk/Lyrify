@@ -29,7 +29,7 @@ function App() {
               <h2 className="header">Favorites</h2>
             </Route>
             <Route exact path="/">
-              <h2 className="header">Playlists</h2>
+              <h2 className="header">Login</h2>
             </Route>
             <Route path="*">
               <h2>No match</h2>
@@ -61,12 +61,19 @@ function App() {
             </Route>
             <Route exact path="/">
               <Authorized>
-                You are logged in
-                <button onClick={() => clearToken()}>Log Out</button>
+                <div className="login__page">
+                  <p>You are logged in</p>
+                  <button
+                    className="button__logout"
+                    onClick={() => clearToken()}
+                  >
+                    Log Out
+                  </button>
+                </div>
               </Authorized>
             </Route>
             <Route path="*">
-              <p>Wrong URL, try a different one ;)</p>
+              <p>Wrong URL, try a different one</p>
             </Route>
           </Switch>
         </main>
