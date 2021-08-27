@@ -1,0 +1,25 @@
+.Grid {
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  list-style-type: none;
+}
+
+.Link__artists {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--text);
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.Link__artists--sub {
+  font-size: 70%;
+  color: var(--text-sub);
+}
+
+.Link__artists--image {
+  height: 150px;
+  width: 150px;
+}

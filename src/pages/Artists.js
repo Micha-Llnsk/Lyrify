@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import useToken from "../hooks/useToken";
+import { Link } from "react-router-dom";
+import "./Artists.css";
 
 export default function Artists() {
   const [artists, setArtists] = useState([]);
@@ -31,12 +33,22 @@ export default function Artists() {
     const ListOfArtists = artists.map((artist) => {
       return (
         <li key={artist.id}>
-          <p>{artist.name}</p>
+          <Link className="Link__artists">
+            <img
+              className="Link__artists--image"
+              src={artist.images[1]?.url}
+              alt={artist.name}
+            />
+            <p className="Link__artists--name">{artist.name}</p>
+            <p className="Link__artists--sub">
+              Followers: {artist.followers.total}
+            </p>
+          </Link>
         </li>
       );
     });
     return ListOfArtists;
   }
 
-  return <ul>{renderArtists()}</ul>;
+  return <ul className="Grid">{renderArtists()}</ul>;
 }

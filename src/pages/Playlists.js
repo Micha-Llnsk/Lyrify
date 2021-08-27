@@ -30,26 +30,24 @@ export default function Playlists() {
 
     const ListOfPlaylists = playlists.map((playlist) => {
       return (
-        <li className="List__Item" key={playlist.id}>
-          <img src={playlist.images[2]?.url} alt={playlist.name} />
-
-          <Link to={`/playlists/${playlist.id}`}>
-            <p>{playlist.name}</p>
-            <p>Songs: {playlist.tracks.total}</p>
+        <li key={playlist.id}>
+          <Link className="Link__playlists" to={`/playlists/${playlist.id}`}>
+            <img src={playlist.images[2]?.url} alt={playlist.name} />
+            <div className="Link__playlists--info">
+              <p className="Link__playlists--name">{playlist.name}</p>
+              <p className="Link__playlists--sub">
+                Owner: {playlist.owner.display_name}
+              </p>
+              <p className="Link__playlists--sub">
+                Songs: {playlist.tracks.total}
+              </p>
+            </div>
           </Link>
+          <div className="Link__playlists--border"></div>
         </li>
       );
     });
     return ListOfPlaylists;
   }
-  /*
-  <li className="App__List--Item" key={char.id}>
-          <img src={char.image} alt={char.name} />
-          <Link to={`/character/${char.id}`}>
-            <h2>{char.name}</h2>
-          </Link>
-        </li>
-  */
-
   return <ul className="List">{renderPlaylists()}</ul>;
 }

@@ -1,3 +1,30 @@
-.List__Item {
-  padding: 1.25em 0.75em;
+.Link__playlists {
+  padding: 1rem 1rem;
+  display: flex;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.Link__playlists--info {
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.Link__playlists--name {
+  font-size: 120%;
+  font-weight: bold;
+  padding-bottom: 0.2rem;
+}
+
+.Link__playlists--sub {
+  font-size: 70%;
+  color: var(--text-sub);
+}
+
+.Link__playlists--border {
+  width: 90%;
+  height: 1px;
+  margin: 0px auto;
+  border-bottom: 1px solid var(--active);
 }
