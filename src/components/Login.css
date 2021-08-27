@@ -1,0 +1,13 @@
+.button__login {
+  text-decoration: none;
+  color: var(--text);
+  font-family: "Righteous", sans-serif;
+  font-size: 18px;
+  padding: 1rem 2rem;
+  background: var(--active);
+  border-radius: 10px;
+}
+
+.button__login:active {
+  opacity: 0.7;
+}

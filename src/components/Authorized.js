@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import useToken from "../hooks/useToken";
+import "./Login.css";
 
 export default function Authorized({ children = [] }) {
   const [token, setToken] = useToken(null);
@@ -22,5 +23,13 @@ export default function Authorized({ children = [] }) {
     }
   }, [setToken]);
 
-  return !token ? <a href={url.toString()}>Login</a> : children;
+  return !token ? (
+    <div className="login__page">
+      <a className="button__login" href={url.toString()}>
+        Login
+      </a>
+    </div>
+  ) : (
+    children
+  );
 }
