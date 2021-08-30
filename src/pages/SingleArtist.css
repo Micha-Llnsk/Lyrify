@@ -1,0 +1,36 @@
+.artist__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.topSongs--header {
+  margin: 1rem 0 0.5rem;
+}
+
+.topSongs__List {
+  padding: 0.5rem 1rem;
+  display: flex;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.topSongs--info {
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.topSongs--song {
+  font-size: 120%;
+  font-weight: bold;
+  padding-bottom: 0.2rem;
+}
+
+.topSongs--sub {
+  font-size: 70%;
+  color: var(--text-sub);
+}
