@@ -31,9 +31,10 @@ export default function Artists() {
       return "Loading...";
     }
     const ListOfArtists = artists.map((artist) => {
+      const followNumb = artist.followers.total;
       return (
         <li key={artist.id}>
-          <Link className="Link__artists">
+          <Link className="Link__artists" to={`/artists/${artist.id}`}>
             <img
               className="Link__artists--image"
               src={artist.images[1]?.url}
@@ -41,7 +42,7 @@ export default function Artists() {
             />
             <p className="Link__artists--name">{artist.name}</p>
             <p className="Link__artists--sub">
-              Followers: {artist.followers.total}
+              Followers: {followNumb.toLocaleString()}
             </p>
           </Link>
         </li>
