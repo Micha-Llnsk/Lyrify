@@ -19,3 +19,5 @@ app.get("/api/lyrics", async (req, res) => {
 app.listen(4000, () => {
   console.log("Listening on http://localhost:4000");
 });
+
+module.exports = app;
