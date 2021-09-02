@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./Lyrics.css";
 
 export default function Lyrics() {
   const [lyrics, setLyrics] = useState(null);
@@ -19,7 +20,15 @@ export default function Lyrics() {
       return "Loading...";
     }
 
-    return <p>{lyrics.lyrics}</p>;
+    const oldText = lyrics.lyrics;
+    const newText = oldText.split("\n").map((text) => {
+      return (
+        <>
+          <p>{text}</p>
+        </>
+      );
+    });
+    return newText;
   }
 
   return (
