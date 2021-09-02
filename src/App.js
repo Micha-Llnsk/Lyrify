@@ -9,6 +9,7 @@ import useToken from "./hooks/useToken.js";
 import Authorized from "./components/Authorized";
 import SinglePlaylist from "./pages/SinglePlaylist.js";
 import SingleArtist from "./pages/SingleArtist.js";
+import Lyrics from "./pages/Lyrics.js";
 
 function App() {
   const [, , clearToken] = useToken();
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route path="/favorites">
               <h2 className="header">Favorites</h2>
+            </Route>
+            <Route exact path="/lyrics">
+              <h2 className="header">Lyrics</h2>
             </Route>
             <Route exact path="/">
               <h2 className="header">Login</h2>
@@ -65,6 +69,11 @@ function App() {
             <Route path="/playlists">
               <Authorized>
                 <Playlists />
+              </Authorized>
+            </Route>
+            <Route path="/lyrics">
+              <Authorized>
+                <Lyrics />
               </Authorized>
             </Route>
             <Route exact path="/">
