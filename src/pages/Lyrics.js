@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "./Lyrics.css";
 
 export default function Lyrics() {
   const [lyrics, setLyrics] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const params = new URLSearchParams(document.location.search);
+  const params = new URLSearchParams(useLocation().search);
   const artist = params.get("artist");
   const track = params.get("track");
 
