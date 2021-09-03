@@ -5,3 +5,19 @@
   background-color: var(--nav);
   height: 100%;
 }
+
+.Icon {
+  height: 30px;
+}
+
+.Icon--search {
+  height: 30px;
+}
+
+.active .Icon path {
+  fill: var(--active) !important;
+}
+
+.active .Icon--search path {
+  stroke: var(--active) !important;
+}
