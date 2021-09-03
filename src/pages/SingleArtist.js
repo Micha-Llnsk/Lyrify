@@ -74,7 +74,10 @@ export default function SingleArtist() {
     const ListOfSongs = songs.map((song) => {
       return (
         <li key={song.id}>
-          <Link className="topSongs__List">
+          <Link
+            className="topSongs__List"
+            to={`/lyrics?artist=${song.album.artists[0].name}&track=${song.name}`}
+          >
             <img src={song.album.images[2].url} alt={song.album.name} />
             <div className="topSongs--info">
               <p className="topSongs--song">{song.name}</p>
