@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import "./Footer.css";
 import { ReactComponent as Library } from "../icons/Library.svg";
 import { ReactComponent as Artists } from "../icons/Artists.svg";
-import { ReactComponent as Bookmark } from "../icons/Saved.svg";
+import { ReactComponent as Favorites } from "../icons/Lyric.svg";
 import { ReactComponent as Search } from "../icons/Search.svg";
 
 export default function Footer() {
@@ -19,7 +19,7 @@ export default function Footer() {
           <Artists className="Icon" />
         </NavLink>
         <NavLink to="/favorites">
-          <Bookmark className="Icon" />
+          <Favorites className="Icon" />
         </NavLink>
       </nav>
     </footer>
