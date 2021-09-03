@@ -33,7 +33,10 @@ export default function Search() {
     const ListOfSongs = songs.map((song) => {
       return (
         <li key={song.id}>
-          <Link className="Link__search">
+          <Link
+            className="Link__search"
+            to={`/lyrics?artist=${song.artists[0].name}&track=${song.name}`}
+          >
             <img src={song.album.images[2].url} alt={song.album.name} />
             <div className="Link__search--info">
               <p className="Link__search--name">{song.name}</p>
