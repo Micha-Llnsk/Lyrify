@@ -1,12 +1,20 @@
-# Lyrify - Project
+# Lyrify - Capstone Project
 
-## Capstone - Project
+How to use:
+If you want it to work on your Mac/Windows machine, you should run a server (copy the one in my project) on localhost:4000
+
+## Features
 
 - It's a Mask/Add-on to Spotify
-- Show lyrics for every song
+- Login with your Spotify account
+- Access your playlists -> show lyrics
+- Search freely for songs -> show lyrics
+- Access artists you follow -> show lyrics
+
+### More to come...
+
 - Save your fav lyrics
-- Access your playlists
-- Access artists you follow
-- Play your music
-- See infos about artists
-- more to come...
+- Play your music/songs
+- See more infos about artists
+- get lyrics translated to english
+- and more...
