@@ -41,7 +41,7 @@ export default function Search() {
             <div className="Link__search--info">
               <p className="Link__search--name">{song.name}</p>
               <p className="Link__search--sub">
-                Artists: {song.artists[0].name}
+                Artist: {song.artists[0].name}
               </p>
               <p className="Link__search--sub">Album: {song.album.name}</p>
             </div>
