@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useToken from "../hooks/useToken";
 import "./SinglePlaylist.css";
+import { Link } from "react-router-dom";
 
 export default function SinglePlaylist() {
   const { playlistId } = useParams();
@@ -28,9 +29,8 @@ export default function SinglePlaylist() {
             }).then((res) => res.json());
           })
         )
-          .then((values) => {
-            setSongs(values);
-            console.log(values);
+          .then((data) => {
+            setSongs(data);
             setIsLoading(false);
           })
           .catch((error) => {
@@ -47,7 +47,19 @@ export default function SinglePlaylist() {
     const ListOfSongs = songs.map((song) => {
       return (
         <li key={song.id}>
-          <p className="Link__playlist--name">{song.name}</p>
+          <Link
+            className="Link__search"
+            to={`/lyrics?artist=${song.artists[0].name}&track=${song.name}`}
+          >
+            <img src={song.album.images[2].url} alt={song.album.name} />
+            <div className="Link__search--info">
+              <p className="Link__search--name">{song.name}</p>
+              <p className="Link__search--sub">
+                Artist: {song.artists[0].name}
+              </p>
+              <p className="Link__search--sub">Album: {song.album.name}</p>
+            </div>
+          </Link>
         </li>
       );
     });
