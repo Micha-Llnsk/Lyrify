@@ -30,11 +30,11 @@ export default function Lyrics() {
     const plainText = lyrics.lyrics;
 
     const formattedText = plainText.split("\n").map((text) => {
-      return <p>{text}</p>;
+      return <p className="Lyrics__text">{text}</p>;
     });
     return (
       <div className="Lyrics__container">
-        <p className="Track__name">{track}</p>
+        <p className="Lyrics__trackName">{track}</p>
         <div className="Border--lyrics"></div>
         {formattedText}
         <button className="Button__back" onClick={() => history.goBack()}>

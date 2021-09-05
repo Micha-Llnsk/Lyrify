@@ -5,13 +5,11 @@ p:empty:before {
 
 .Lyrics__container {
   padding: 0.5rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.Track__name {
+.Lyrics__trackName {
   font-size: 150%;
+  text-align: center;
 }
 
 .Border--lyrics {
@@ -25,7 +23,7 @@ p:empty:before {
   all: unset;
   border-radius: 5px;
   cursor: pointer;
-  margin: 2rem;
+  margin: 2rem auto;
   padding: 0.75em 1.25em;
   display: flex;
   gap: 15px;
