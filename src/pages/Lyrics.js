@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./Lyrics.css";
+import { ReactComponent as Back } from "../icons/Back.svg";
 
 export default function Lyrics() {
   const [lyrics, setLyrics] = useState(null);
@@ -8,6 +10,7 @@ export default function Lyrics() {
   const params = new URLSearchParams(useLocation().search);
   const artist = params.get("artist");
   const track = params.get("track");
+  const history = useHistory();
 
   useEffect(() => {
     setIsLoading(true);
@@ -27,17 +30,16 @@ export default function Lyrics() {
     const plainText = lyrics.lyrics;
 
     const formattedText = plainText.split("\n").map((text) => {
-      return (
-        <>
-          <p>{text}</p>
-        </>
-      );
+      return <p>{text}</p>;
     });
     return (
       <div className="Lyrics__container">
         <p className="Track__name">{track}</p>
         <div className="Border--lyrics"></div>
         {formattedText}
+        <button className="Button__back" onClick={() => history.goBack()}>
+          <Back className="Button__back--icon" />
+        </button>
       </div>
     );
   }
