@@ -50,7 +50,7 @@ export default function Playlists() {
               </p>
             </div>
           </Link>
-          <div className="Link__playlists--border"></div>
+          <div className="Border--playlists"></div>
         </li>
       );
     });

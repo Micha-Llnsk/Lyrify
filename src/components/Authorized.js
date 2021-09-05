@@ -25,6 +25,7 @@ export default function Authorized({ children = [] }) {
 
   return !token ? (
     <div className="login__page">
+      <p>Allow access to your Spotify account to use</p>
       <a className="button__login" href={url.toString()}>
         Login
       </a>
