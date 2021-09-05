@@ -10,6 +10,19 @@ import Authorized from "./components/Authorized";
 import SinglePlaylist from "./pages/SinglePlaylist.js";
 import SingleArtist from "./pages/SingleArtist.js";
 import Lyrics from "./pages/Lyrics.js";
+import { useLocation } from "react-router";
+
+function Playlist() {
+  const params = new URLSearchParams(useLocation().search);
+  const playlist = params.get("playlist");
+  return <h2 className="header">{playlist}</h2>;
+}
+
+function Artist() {
+  const params = new URLSearchParams(useLocation().search);
+  const artist = params.get("artist");
+  return <h2 className="header">{artist}</h2>;
+}
 
 function App() {
   const [, , clearToken] = useToken();
@@ -18,6 +31,11 @@ function App() {
       <div className="App">
         <header className="App__header">
           <Switch>
+            <Route
+              path="/playlists/:playlistId"
+              children={<Playlist />}
+            ></Route>
+            <Route path="/artists/:artistId" children={<Artist />}></Route>
             <Route path="/playlists">
               <h2 className="header">Playlists</h2>
             </Route>

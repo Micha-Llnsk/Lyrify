@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import useToken from "../hooks/useToken";
 import "./Playlists.css";
 import { Link } from "react-router-dom";
+import placeholder from "../icons/placeholder.svg";
 
 export default function Playlists() {
   const [playlists, setPlaylists] = useState([]);
@@ -31,8 +32,14 @@ export default function Playlists() {
     const ListOfPlaylists = playlists.map((playlist) => {
       return (
         <li key={playlist.id}>
-          <Link className="Link__playlists" to={`/playlists/${playlist.id}`}>
-            <img src={playlist.images[2]?.url} alt={playlist.name} />
+          <Link
+            className="Link__playlists"
+            to={`/playlists/${playlist.id}?playlist=${playlist.name}`}
+          >
+            <picture>
+              <source srcSet={playlist.images[2]?.url} />
+              <img src={placeholder} alt={playlist.name} />
+            </picture>
             <div className="Link__playlists--info">
               <p className="Link__playlists--name">{playlist.name}</p>
               <p className="Link__playlists--sub">
