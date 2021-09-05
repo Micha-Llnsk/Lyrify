@@ -52,7 +52,7 @@ function App() {
               <h2 className="header">Lyrics</h2>
             </Route>
             <Route exact path="/">
-              <h2 className="header">Login</h2>
+              <h2 className="header">LYRIFY</h2>
             </Route>
             <Route path="*">
               <h2>No match</h2>
@@ -97,7 +97,7 @@ function App() {
             <Route exact path="/">
               <Authorized>
                 <div className="login__page">
-                  <p>You are logged in</p>
+                  <p>Your Token has timed out, logout to login again</p>
                   <button
                     className="button__logout"
                     onClick={() => clearToken()}
