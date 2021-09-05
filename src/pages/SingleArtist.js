@@ -56,7 +56,6 @@ export default function SingleArtist() {
     let followNumb = artist.followers.total;
     return (
       <section className="artist__info">
-        <h3>Artist: {artist.name}</h3>
         <img src={artist.images[1].url} alt={artist.name} />
         <p className="topSongs--sub">
           Followers: {followNumb.toLocaleString()}

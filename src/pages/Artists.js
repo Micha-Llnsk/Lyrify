@@ -34,7 +34,10 @@ export default function Artists() {
       const followNumb = artist.followers.total;
       return (
         <li key={artist.id}>
-          <Link className="Link__artists" to={`/artists/${artist.id}`}>
+          <Link
+            className="Link__artists"
+            to={`/artists/${artist.id}?artist=${artist.name}`}
+          >
             <img
               className="Link__artists--image"
               src={artist.images[1]?.url}

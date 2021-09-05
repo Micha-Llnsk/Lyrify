@@ -32,7 +32,10 @@ export default function Playlists() {
     const ListOfPlaylists = playlists.map((playlist) => {
       return (
         <li key={playlist.id}>
-          <Link className="Link__playlists" to={`/playlists/${playlist.id}`}>
+          <Link
+            className="Link__playlists"
+            to={`/playlists/${playlist.id}?playlist=${playlist.name}`}
+          >
             <picture>
               <source srcSet={playlist.images[2]?.url} />
               <img src={placeholder} alt={playlist.name} />
