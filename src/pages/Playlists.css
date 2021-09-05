@@ -1,5 +1,5 @@
 .Link__playlists {
-  padding: 1rem 1rem;
+  padding: 0.8rem 1rem;
   display: flex;
   text-decoration: none;
   color: var(--text);
@@ -22,9 +22,9 @@
   color: var(--text-sub);
 }
 
-.Link__playlists--border {
+.Border--playlists {
   width: 90%;
   height: 1px;
-  margin: 0px auto;
+  margin: 0rem auto;
   border-bottom: 1px solid var(--active);
 }

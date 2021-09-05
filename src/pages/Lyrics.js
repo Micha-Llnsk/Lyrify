@@ -23,7 +23,9 @@ export default function Lyrics() {
     if (isLoading || lyrics === null) {
       return "Loading...";
     }
+
     const plainText = lyrics.lyrics;
+
     const formattedText = plainText.split("\n").map((text) => {
       return (
         <>
@@ -31,7 +33,13 @@ export default function Lyrics() {
         </>
       );
     });
-    return formattedText;
+    return (
+      <div className="Lyrics__container">
+        <p className="Track__name">{track}</p>
+        <div className="Border--lyrics"></div>
+        {formattedText}
+      </div>
+    );
   }
 
   return (

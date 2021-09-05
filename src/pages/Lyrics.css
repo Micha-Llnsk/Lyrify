@@ -2,3 +2,19 @@ p:empty:before {
   content: " ";
   white-space: pre;
 }
+
+.Lyrics__container {
+  padding: 0.5rem 1.5rem;
+}
+
+.Track__name {
+  text-align: center;
+  font-size: 150%;
+}
+
+.Border--lyrics {
+  width: 90%;
+  height: 1px;
+  margin: 0.5rem auto;
+  border-bottom: 1px solid var(--active);
+}
