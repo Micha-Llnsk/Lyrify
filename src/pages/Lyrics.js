@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import "./Lyrics.css";
 import { ReactComponent as Back } from "../icons/Back.svg";
 
@@ -11,21 +10,25 @@ export default function Lyrics() {
   const artist = params.get("artist");
   const track = params.get("track");
   const history = useHistory();
+  const base = window.location.origin;
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`http://localhost:4000/api/lyrics?artist=${artist}&track=${track}`)
+    fetch(`${base}/api/lyrics?artist=${artist}&track=${track}`)
       .then((res) => res.json())
       .then((data) => {
         setLyrics(data);
         setIsLoading(false);
       });
-  }, [artist, track]);
+  }, [artist, track, base]);
 
   function renderLyrics() {
     if (isLoading || lyrics === null) {
-      return "Loading...";
-    }
+      return (
+      <>
+      "Loading...";
+      </>
+    )}
 
     const plainText = lyrics.lyrics;
 
