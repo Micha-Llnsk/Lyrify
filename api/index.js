@@ -1,9 +1,12 @@
 const express = require("express");
+var cors = require('cors')
 const lyricsFinder = require("lyrics-finder");
 
 const app = express();
 
 app.use(express.json());
+
+app.use(cors())
 
 app.get("/api/lyrics", async (req, res) => {
   const artist = req.query.artist;
