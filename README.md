@@ -1,20 +1,20 @@
 # Lyrify - Capstone Project
+This app is optimized for mobile devices.
 
-How to use:
-If you want it to work on your Mac/Windows machine, you should run a server (copy the one in my project) on localhost:4000
+### For people who like to sing karaoke or just for themselves
+A Mask/Add-on to improve your Spotify experience
 
 ## Features
 
-- It's a Mask/Add-on to Spotify
 - Login with your Spotify account
 - Access your playlists -> show lyrics
 - Search freely for songs -> show lyrics
 - Access artists you follow -> show lyrics
 
-### More to come...
+## More to come...
 
 - Save your fav lyrics
 - Play your music/songs
 - See more infos about artists
 - get lyrics translated to english
-- and more...
+- and maybe more...
